@@ -1,0 +1,31 @@
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+export PATH="$HOME/.local/bin:$PATH"
+
+gset() { gsettings set org.gnome.desktop.interface "$@"; }
+gget() { gsettings get org.gnome.desktop.interface "$@"; }
+eval "$(mise activate bash)"
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+eval "$(fzf --bash)"
+# --- Modern Tool Aliases ---
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -lah --icons --group-directories-first'
+alias la='eza -a --icons --group-directories-first'
+alias lt='eza --tree --level=2 --icons'
+alias cat='bat --paging=never'
+
+# --- Git Shortcuts ---
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate -20'
+alias gd='git diff'
