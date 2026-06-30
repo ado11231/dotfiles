@@ -1,0 +1,2 @@
+dot_bashrc    linguist-language=Shell linguist-detectable
+dot_gitconfig linguist-language=Git-Config
