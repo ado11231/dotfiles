@@ -29,3 +29,7 @@ alias gc='git commit -m'
 alias gp='git push'
 alias gl='git log --oneline --graph --decorate -20'
 alias gd='git diff'
+
+# --- Terminal title ---
+# Override the system default (user@host:dir) so the title just says "ado"
+PROMPT_COMMAND+=('printf "\033]0;%s\007" "ado"')
