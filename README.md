@@ -9,7 +9,9 @@
   <a href="https://www.chezmoi.io/">chezmoi</a>.
 </p>
 
-![Desktop](screenshots/desktop.png)
+<p align="center">
+  <img src="screenshots/terminal.png" alt="Terminal" width="720">
+</p>
 
 <table>
 <tr>
@@ -26,7 +28,7 @@
 - [Tray Icons: Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/) — legacy tray icons
 - [Move Clock](https://extensions.gnome.org/extension/2/move-clock/) — clock to the left
 
-Full enable list in [`gnome/extensions.txt`](gnome/extensions.txt).
+Enable list: [`gnome/extensions.txt`](gnome/extensions.txt).
 
 </td>
 <td valign="top" width="50%">
@@ -48,18 +50,18 @@ Full enable list in [`gnome/extensions.txt`](gnome/extensions.txt).
 
 ### What's in here
 
-```
-dot_bashrc              → ~/.bashrc          starship/mise/zoxide/fzf + aliases
-dot_gitconfig           → ~/.gitconfig
-private_dot_config/     → ~/.config/         starship, mise, gh, git, gtk-3/4, fontconfig
-gnome/dconf.ini         full GNOME settings dump (theme, keybinds, dock, extensions)
-gnome/extensions.txt    enabled shell extensions
-system/keyd/            → /etc/keyd/         Caps Lock → WASD arrow layer
-pkglist.txt             explicitly-installed pacman packages
-```
+| Path | Maps to | Contents |
+| --- | --- | --- |
+| `dot_bashrc` | `~/.bashrc` | starship / mise / zoxide / fzf + aliases |
+| `dot_gitconfig` | `~/.gitconfig` | git config |
+| `private_dot_config/` | `~/.config/` | starship, mise, gh, git, gtk-3/4, fontconfig |
+| `gnome/dconf.ini` | — | full GNOME dump (theme, keybinds, dock, extensions) |
+| `gnome/extensions.txt` | — | enabled shell extensions |
+| `system/keyd/` | `/etc/keyd/` | Caps Lock → WASD arrow layer |
+| `pkglist.txt` | — | explicitly-installed pacman packages |
 
-`README.md`, `pkglist.txt`, `gnome/`, `system/`, and `screenshots/` stay in the
-repo but are excluded from `$HOME` via [`.chezmoiignore`](.chezmoiignore).
+`gnome/`, `system/`, `screenshots/`, `pkglist.txt`, and `README.md` live in the
+repo but are kept out of `$HOME` via [`.chezmoiignore`](.chezmoiignore).
 
 ### Install
 
