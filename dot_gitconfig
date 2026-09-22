@@ -4,7 +4,7 @@
 	required = true
 	clean = git-lfs clean -- %f
 [user]
-	name = adnan
+	name = ado11231
 	email = 165864864+ado11231@users.noreply.github.com
 [credential "https://github.com"]
 	helper = 
