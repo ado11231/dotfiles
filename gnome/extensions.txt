@@ -1,8 +1,6 @@
+just-perfection-desktop@just-perfection
 dash-to-dock@micxgx.gmail.com
 blur-my-shell@aunetx
-trayIconsReloaded@selfmade.pl
-Move_Clock@rmy.pobox.com
 hidetopbar@mathieu.bidon.ca
-openbar@neuromorph
 Vitals@CoreCoding.com
-just-perfection-desktop@just-perfection
+Move_Clock@rmy.pobox.com
