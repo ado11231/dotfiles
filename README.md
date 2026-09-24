@@ -1,5 +1,9 @@
 # dotfiles
 
+<p align="center">
+  <img src="arch/screenshots/fastfetch.png" alt="fastfetch" width="720">
+</p>
+
 Managed with [chezmoi](https://chezmoi.io). Each folder is its own chezmoi source.
 
 - [`mac/`](mac) — macOS: zsh, starship, kitty, tmux, Homebrew
