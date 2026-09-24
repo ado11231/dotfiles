@@ -1,7 +1,11 @@
 # dotfiles
 
 <p align="center">
-  <img src="arch/screenshots/fastfetch.png" alt="fastfetch" width="720">
+  <img src="arch/screenshots/fastfetch.png" alt="Arch fastfetch" width="720">
+</p>
+
+<p align="center">
+  <img src="mac/screenshots/fastfetch.png" alt="macOS fastfetch" width="720">
 </p>
 
 Managed with [chezmoi](https://chezmoi.io). Each folder is its own chezmoi source.
