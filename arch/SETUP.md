@@ -5,7 +5,7 @@
 Paths are relative to `arch/`.
 
 ```
-dot_bashrc              → ~/.bashrc
+dot_bashrc              → ~/.bashrc      PATH, history, completion, tools
 dot_gitconfig           → ~/.gitconfig
 private_dot_config/     → ~/.config
   fontconfig/fonts.conf   font rendering (hinting, subpixel, synthetic bold/italic)
@@ -22,7 +22,7 @@ system/                 not deployed — root-owned files
 pkglist.txt             explicitly installed packages
 ```
 
-Everything outside `private_dot_config/`, `dot_bashrc` and `dot_gitconfig` is listed in
+Everything outside `private_dot_config/` and the `dot_` files is listed in
 `.chezmoiignore`, so chezmoi never writes it to `$HOME`. Those files are applied by hand
 (see below).
 
@@ -40,6 +40,9 @@ yay -S --needed - < pkglist.txt
 
 # dotfiles
 chezmoi apply
+
+# runtimes
+mise install
 ```
 
 Then the pieces chezmoi does not manage:

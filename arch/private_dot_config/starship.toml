@@ -1,14 +1,37 @@
+# ~/.config/starship.toml -- prompt. Icons need a Nerd Font (kitty uses JetBrainsMono Nerd Font).
+
 add_newline = false
+line_break.disabled = true
 
-[line_break]
-disabled = true
-
-# Prompt character (the ❯): white on success, red after a failed command
 [character]
 success_symbol = "[❯](bold white)"
 error_symbol = "[❯](bold red)"
 
-# Command duration ("took 3s"): subtle dimmed gray
+[directory]
+read_only = " 󰌾"
+
 [cmd_duration]
-style = "dimmed white"
 format = "[took $duration]($style) "
+style = "dimmed white"
+
+# --- Icons ---
+[git_branch]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[java]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[docker_context]
+symbol = " "
