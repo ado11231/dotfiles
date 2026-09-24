@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+# dev [project-path]
+#
+# Open a project in a tmux session with the same layout every single time:
+#
+#   ┌──────────────────────────────┬───────────────┐
+#   │                              │  shell        │
+#   │   main            (70%)      ├───────────────┤
+#   │                              │  shell        │
+#   └──────────────────────────────┴───────────────┘
+#
+# Run it again for the same project and it just reattaches to what's already
+# running -- it never rebuilds a session that exists, so nothing is lost.
+#
+# Usage:
+#   dev                 # current directory
+#   dev ~/Documents/Cursor/marketing-kit
+set -euo pipefail
+
+# --- Layout knobs. Edit these two numbers to reshape every project at once. ---
+RIGHT_COLUMN_WIDTH=30   # % of screen width for the terminal column
+RIGHT_TOP_HEIGHT=50     # % of that column's height for the top terminal
+
+dir=$(cd "${1:-.}" && pwd)
+
+# tmux forbids '.' and ':' in session names (both are address separators).
+session=$(basename "$dir" | tr '.:' '--')
+
+if tmux has-session -t "=$session" 2>/dev/null; then
+  # Already running: attach (or hop to it if we're already inside tmux).
+  if [ -n "${TMUX:-}" ]; then
+    exec tmux switch-client -t "=$session"
+  fi
+  exec tmux attach-session -t "=$session"
+fi
+
+# Build the session detached, but at the REAL terminal size. A detached session
+# defaults to 80x24, so percentage splits would be computed against that and
+# then rescaled (with rounding drift) the moment you attach a full-size client.
+#
+# `stty size` on the controlling terminal is the reliable source. `tput` falls
+# back to terminfo's 80x24 when stdout isn't a tty, which would silently build
+# the layout at the wrong scale.
+cols=200 rows=50
+if size=$(stty size </dev/tty 2>/dev/null); then
+  rows=${size%% *}
+  cols=${size##* }
+elif [ -t 1 ]; then
+  cols=$(tput cols) rows=$(tput lines)
+fi
+
+tmux new-session -d -s "$session" -c "$dir" -n code -x "$cols" -y "$rows"
+
+# Address panes by their unique id (%3, %4 ...) rather than index. Ids are
+# stable and unaffected by pane-base-index, so this can't drift out of sync
+# with tmux.conf.
+main=$(tmux list-panes -t "=$session:code" -F '#{pane_id}' | head -1)
+
+top_right=$(tmux split-window -h -t "$main" -c "$dir" \
+  -l "${RIGHT_COLUMN_WIDTH}%" -P -F '#{pane_id}')
+
+tmux split-window -v -t "$top_right" -c "$dir" \
+  -l "${RIGHT_TOP_HEIGHT}%" >/dev/null
+
+tmux select-pane -t "$main"
+
+if [ -n "${TMUX:-}" ]; then
+  exec tmux switch-client -t "=$session"
+fi
+exec tmux attach-session -t "=$session"
