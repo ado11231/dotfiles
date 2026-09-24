@@ -2,6 +2,8 @@
 
 ### layout
 
+Paths are relative to `arch/`.
+
 ```
 dot_bashrc              → ~/.bashrc
 dot_gitconfig           → ~/.gitconfig
@@ -27,11 +29,17 @@ Everything outside `private_dot_config/`, `dot_bashrc` and `dot_gitconfig` is li
 ### install
 
 ```bash
+# clone, and point chezmoi at the arch/ folder
+git clone https://github.com/ado11231/dotfiles.git ~/.local/share/chezmoi
+mkdir -p ~/.config/chezmoi
+echo 'sourceDir = "~/.local/share/chezmoi/arch"' > ~/.config/chezmoi/chezmoi.toml
+cd ~/.local/share/chezmoi/arch
+
 # packages first (yay for the AUR entries in pkglist.txt)
 yay -S --needed - < pkglist.txt
 
 # dotfiles
-chezmoi init --apply https://github.com/ado11231/dotfiles.git
+chezmoi apply
 ```
 
 Then the pieces chezmoi does not manage:

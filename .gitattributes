@@ -1,2 +1,4 @@
-dot_bashrc    linguist-language=Shell linguist-detectable
-dot_gitconfig linguist-language=Git-Config
+arch/dot_bashrc    linguist-language=Shell linguist-detectable
+arch/dot_gitconfig linguist-language=Git-Config
+mac/dot_zshrc      linguist-language=Shell linguist-detectable
+mac/dot_gitconfig  linguist-language=Git-Config
