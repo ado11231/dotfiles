@@ -1,0 +1,121 @@
+tap "dopplerhq/cli", "https://github.com/DopplerHQ/homebrew-doppler.git"
+tap "dopplerhq/doppler", "https://github.com/DopplerHQ/homebrew-doppler.git", trusted: { casks: ["doppler"] }
+tap "supabase/tap"
+tap "wix-incubator/brew", "https://github.com/wix-incubator/homebrew-brew.git"
+tap "wix/brew", "https://github.com/wix-incubator/homebrew-brew.git"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Bash Automated Testing System
+brew "bats-core"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Cross-platform make
+brew "cmake"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# USB programmer
+brew "dfu-util"
+# CLI for interacting with Doppler secrets and configuration
+brew "doppler", link: false
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Install and debug iPhone apps from the command-line
+brew "ios-deploy"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Your CLI home video recorder
+brew "vhs"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Fish shell like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Apple simulator utilities
+brew "wix-incubator/brew/applesimutils", trusted: true
+# 3D printing solution
+cask "cura-lulzbot"
+# The official Doppler CLI for managing your secrets
+cask "dopplerhq/cli/doppler"
+cask "font-jetbrains-mono-nerd-font"
+# GPU-based terminal emulator
+cask "kitty"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
+cask "pearcleaner"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+vscode "anthropic.claude-code"
+vscode "azemoh.one-monokai"
+vscode "expo.vscode-expo-tools"
+vscode "formulahendry.code-runner"
+vscode "llvm-vs-code-extensions.vscode-clangd"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpp-devtools"
+vscode "ms-vscode.cpptools"
+vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpptools-themes"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "msjsdiag.vscode-react-native"
+vscode "redhat.vscode-yaml"
+vscode "rust-lang.rust-analyzer"
+vscode "usernamehw.errorlens"
+vscode "vadimcn.vscode-lldb"
+vscode "vscode-icons-team.vscode-icons"
+vscode "zhuangtongfa.material-theme"
+cargo "rustlings"
+cargo "slingshot-cli"
+npm "@anthropic-ai/claude-code"
+npm "@google/gemini-cli"
+npm "agenttracker"
+npm "ccplus"
+npm "eas-cli"
+npm "pnpm"
+npm "vercel"
