@@ -1,0 +1,4 @@
+# ~/.zprofile -- login shells only. Keep this to environment that GUI apps and
+# every shell should inherit; interactive setup lives in ~/.zshrc.
+
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"

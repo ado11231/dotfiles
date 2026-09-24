@@ -1,0 +1,11 @@
+[user]
+	name = ado11231
+	email = adoalagic0@gmail.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true

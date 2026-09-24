@@ -1,0 +1,3 @@
+# ~/.zshenv -- read by every zsh, including scripts. Keep it tiny.
+
+. "$HOME/.cargo/env"
