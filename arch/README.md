@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshots/terminal.png" alt="fastfetch" width="720">
+  <img src="screenshots/fastfetch.png" alt="fastfetch" width="720">
 </p>
 
 <p align="center">
