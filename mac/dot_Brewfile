@@ -41,6 +41,8 @@ brew "ios-deploy"
 brew "lazygit"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Small build system for use with gyp or CMake
@@ -59,6 +61,8 @@ brew "shellcheck"
 brew "starship"
 # Terminal multiplexer
 brew "tmux"
+# Parser generator tool (builds nvim-treesitter parsers)
+brew "tree-sitter-cli"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Your CLI home video recorder
