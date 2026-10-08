@@ -28,6 +28,11 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
+# --- Window title ---
+_set_title() { print -Pn '\e]2;ado\a' }
+precmd_functions+=(_set_title)
+preexec_functions+=(_set_title)
+
 # --- Aliases ---
 alias ls='eza --group-directories-first'
 alias ll='eza -la --group-directories-first'
