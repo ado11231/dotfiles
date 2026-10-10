@@ -26,6 +26,18 @@ end
 return {
   {
     "folke/snacks.nvim",
+    keys = {
+      -- No explorer sidebar. Browse files with <leader>h instead.
+      { "<leader>e", false },
+      { "<leader>E", false },
+      {
+        "<leader>h",
+        function()
+          Snacks.picker.files({ cwd = vim.fn.getcwd() })
+        end,
+        desc = "Files (working directory)",
+      },
+    },
     opts = {
       picker = {
         sources = {
