@@ -90,17 +90,7 @@ end
 
 function M.open()
   if #terms == 0 then
-    -- Remember manual resizes so the panel comes back at the same size.
-vim.api.nvim_create_autocmd("WinResized", {
-  group = group,
-  callback = function()
-    if win_open() and vim.tbl_contains(vim.v.event.windows, win) then
-      width = vim.api.nvim_win_get_width(win)
-    end
-  end,
-})
-
-return M.new()
+    return M.new()
   end
   if not win_open() then
     create_win()
@@ -120,17 +110,7 @@ end
 
 function M.cycle(step)
   if #terms == 0 then
-    -- Remember manual resizes so the panel comes back at the same size.
-vim.api.nvim_create_autocmd("WinResized", {
-  group = group,
-  callback = function()
-    if win_open() and vim.tbl_contains(vim.v.event.windows, win) then
-      width = vim.api.nvim_win_get_width(win)
-    end
-  end,
-})
-
-return M.new()
+    return M.new()
   end
   if not win_open() then
     create_win()
